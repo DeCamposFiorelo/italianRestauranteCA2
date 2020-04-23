@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restaurantmenu>
+  <section name="Side Dishes">
+    <entree>
+      <item>Calamari Fritti</item>
+      <description>Deep fried calamari rings with vegetable fritti, chilli and tomato dip</description>
+      <price>9.00</price>
+    </entree>
+    <entree v="true">
+      <item>Patate arrosto al rosmarino </item>
+      <description>Rosemary roasted  potatoes</description>
+      <price> 6.00</price>
+    </entree>
+  </section>
+  <section name="Starters">
+    <entree>
+      <item>Salmone Marinato</item>
+      <description>Cold smoked  Irish salmon marinated with orange and pink peppercorn</description>
+      <price>8.00</price>
+    </entree>
+    <entree v="true">
+      <item>Delizia dell’orto </item>
+      <description>Chargrilled vegetables/aubergines, courgettes, peppers, Asiago DOP and Parmigiano cheese</description>
+      <price>7.00</price>
+    </entree>
+    <entree v="true">
+      <item>Bruschetta al pomodoro</item>
+      <description>Bruschetta with Italian vine ripened tomatoes, fresh basil</description>
+      <price>4.00</price>
+    </entree>
+  </section>
+  <section name="Main">
+    <entree>
+      <item>Brasato di pollo ruspante</item>
+      <description>Slow braised Fernhill succulent free range chicken, in red wine, onion carrots, smoked salt and garden herbs. Served with rosemary potatoes.</description>
+      <price>19.80</price>
+    </entree>
+    <entree>
+      <item>Costata di Manzo Irlandese alla griglia con due contorni</item>
+      <description>Char-grilled, Achill sea salt, pasture-fed Black Angus ribeye of  beef steak served with rosemary potatoes and vegs  </description>
+      <price>28.90</price>
+    </entree>
+    <entree>
+      <item>Spaghetti fatti a mano con frutti di mare e pomodorini </item>
+      <description>Fresh handmade spaghetti with Roaring Bay  mussels, tiger prawns, fresh baby squid, chilli flakes and Sicilian cherry tomatoes</description>
+      <price>17.50</price>
+    </entree>
+    <entree>
+      <item>Garganelli con salmone Irlandese affumicato e panna profumata agli agrumi e brandy</item>
+      <description>Fresh hand rolled penne with Daly's smoked Irish salmon,​​​​  brandy cream and lemon zest</description>
+      <price>17.00</price>
+    </entree>
+    <entree v="true">
+      <item>Spiced Cauliflower Ribs </item>
+      <description>Sticky BBQ Sauce, Pepper and Fennel Stew, Mojo Verde</description>
+      <price>16.00</price>
+    </entree>
+    <entree>
+      <item>King Oyster Scallops</item>
+      <description>Apple and Fennel Salad, Toasted Sesame Dressing, Tarragon and Smoked Almond Pesto</description>
+      <price>18.00</price>
+    </entree>
+  </section>
+  <section name="Pizza">
+    <entree v="true">
+      <item>Margherita con bufala</item>
+      <description>Tomato sauce , buffalo mozzarella from Campania, fresh basil</description>
+      <price>15.00</price>
+    </entree>
+    <entree v="true">
+      <item>Caprese </item>
+      <description>San Marzano DOP, fior di latte, cherry mozzarella, cherry tomato, rocket, basil pesto, extra virgin olive oil</description>
+      <price>12.60</price>
+    </entree>
+    <entree>
+      <item>Quattro formaggi </item>
+      <description>Mozzarella, Apulian Scamorza ,Gorgonzola DOP , Taleggio DOP</description>
+      <price>15.00</price>
+    </entree>
+  </section>
+  <section name="Desert">
+    <entree>
+      <item>Todays Ice Creams and Sorbet</item>
+      <description>The ice creams of the day</description>
+      <price>8.00</price>
+    </entree>
+    <entree v="true">
+      <item>Mango Raw Cake</item>
+      <description>Hazelnut and Goji Berry Base, Passionfruit Sorbet</description>
+      <price>8.00</price>
+    </entree>
+    <entree>
+      <item>Selection of Cheese</item>
+      <description>Seasonal Chutney, Walnut Crackers</description>
+      <price>8.00</price>
+    </entree>
+    <entree>
+      <item>chocCake</item>
+      <price>6.00</price>
+      <description>Chocolate cake</description>
+    </entree>
+  </section>
+  <section name="Wines">
+    <entree>
+      <item>Quinta Bons Ventos</item>
+      <description>WHITE ,Vital, Lisboa, Portugal</description>
+      <price>36.00</price>
+    </entree>
+    <entree>
+      <item>Chateau Dereszla</item>
+      <description> WHITE, Furmint, Tokaj, Hungary</description>
+      <price>38.00</price>
+    </entree>
+    <entree>
+      <item>Santa Ana</item>
+      <description>RED,Malbec, Mendoza, Argentina</description>
+      <price>36</price>
+    </entree>
+    <entree>
+      <item>Domaine Lalaurie</item>
+      <description>RED,Cabernet / Syrah, Languedoc, France</description>
+      <price>32</price>
+    </entree>
+  </section>
+  <section name="Drinks">
+    <entree v="true">
+      <item>Water</item>
+      <description>Water Bottle</description>
+      <price>3.00</price>
+    </entree>
+    <entree>
+      <item>Soft drink</item>
+      <description>Coca-cola,Pepsi,Sprite</description>
+      <price>4.0</price>
+    </entree>
+  </section>
+</restaurantmenu>

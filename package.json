@@ -1,0 +1,30 @@
+{
+  "name": "italianrestauranteca2",
+  "version": "1.0.0",
+  "main": "website.js",
+  "scripts": {
+    "start": "node website.js",
+    "devStart":"nodemon website.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeCamposFiorelo/italianRestauranteCA2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeCamposFiorelo/italianRestauranteCA2/issues"
+  },
+  "homepage": "https://github.com/DeCamposFiorelo/italianRestauranteCA2#readme",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "xml2js": "^0.4.22",
+    "xslt-processor": "^0.11.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "description": ""
+}
