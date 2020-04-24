@@ -9,6 +9,11 @@
 <br>
 <% pizza.forEach(pizza =>{ %>
     <div><%= pizza.name %></div>
+    <a href="/pizzas/<%= pizza.id %>">view</a>
+    <a href="/pizzas/<%= pizza.id %>/edit">Edit</a>
+    <%- include('../partials/delete_form',
+              { url: `/pizzas/${pizza.id}` }) %>
+    
 <%})%>
 <br>
 <% pizza.forEach(pizza =>{ %>
@@ -18,4 +23,6 @@
 <% pizza.forEach(pizza =>{ %>
     <%= pizza.description %>
 <%})%>
+<br>
+
 

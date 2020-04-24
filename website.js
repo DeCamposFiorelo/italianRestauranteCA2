@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const indexRouter = require('./router/index')
 const pizzaRouter = require('./router/pizzas')
 const sideRouter = require('./router/sides')
-
+const methodOverride = require('method-override')
 //connect to the database(Im using env to hide the credentials)- Mikhail showed in class
 
 const mongoose = require('mongoose')
@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({limit:'10mb', extended:false}))
 app.use('/',indexRouter)// index page
 app.use('/pizzas',pizzaRouter)
 app.use('/sides',sideRouter)
+app.use(methodOverride('_method'))
 
 const Port = process.env.Port || 3000;// port to use
 

@@ -44,10 +44,46 @@ router.post('/', async(req,res)=>{
             errorMessage:'Error creating a pizza'
         })
     }
+ 
     
+})
+router.get('/:id',(req,res)=>{
+    res.send('Show Pizza'+req.params.id)
+})
+
+
+router.get('/:id/edit',async(req,res)=>{
+    try{
+        const pizzas = await Pizzas.findById(req.params.id)
+        res.render('pizzas/edit',{ pizzas :pizzas})
+    }catch{
+        res.redirect('/pizzas')
+    }
+   
+})
+
+router.put('/:id',async (req,res)=>{
+   let pizza
+    try{
+        pizza = await Pizzas.findById(req.params.id)
+         await pizza.save()
+        res.redirect(`/pizzas/${pizza.id}`)
+       
+    }catch{
+        if( pizza ==null){
+            res.redirect('/')
+        }else{
+            res.render('pizzas/new',{
+            pizzas:pizza,
+            errorMessage:'Error updating'
+        })
+    }
+        
+        }
     
-    
-    
+})
+router.delete('/:id',(req,res)=>{
+    res.send('Delete Pizza'+req.params.id)
 })
 
 module.exports = router 
