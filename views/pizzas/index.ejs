@@ -1,1 +1,12 @@
-all pizza
+<h2>Search for Pizza</h2>
+<form action="/pizzas" method="GET">
+
+
+<label>Name</label>
+<input text="text" name="name" value="<%= searchOptions.name %>">
+<button type="search">Search</button>
+</form>
+<br>
+<% pizza.forEach(pizza =>{ %>
+    <div><%= pizza.name %></div>
+<%})%>

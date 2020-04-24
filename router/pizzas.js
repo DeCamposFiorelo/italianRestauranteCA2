@@ -1,33 +1,49 @@
 const express = require('express')
 const router = express.Router()
-const pizzas = require('../model/pizzas')
+const Pizzas = require('../model/pizza')
 
 //get all the pizza
-router.get('/',(req,res)=>{
-    res.render('pizzas/index')//it will send to the index page when the web start
+router.get('/',async(req,res)=>{
+    let searchOptions = {}
+  if (req.query.name != null && req.query.name !== '') {
+    searchOptions.name = new RegExp(req.query.name, 'i')
+  }
+    try{
+        const pizzas = await Pizzas.find(searchOptions)
+         res.render('pizzas/index',
+         {pizza:pizzas, 
+            searchOptions:req.query
+        })
+
+    }catch{
+        res.redirect('/')
+    }
+   
 });
 
 //new pizza router
 router.get('/new',(req,res)=>{
-    res.render('pizzas/new',{ pizzas:new pizzas()})
+    res.render('pizzas/new',{ pizzas :new Pizzas()})
 })
 //creaate pizza router
-router.post('/',(req,res)=>{
-    const pizza = new pizzas({
-        item: req.body.item
+
+router.post('/', async(req,res)=>{
+    const pizza = new Pizzas({
+        name: req.body.name
     })
-    pizza.save((err,newPizzas)=>{
-        if(err){
-            res.render('pizzas/new',{
-                pizzas:pizzas,
-                errorMessage:'Error creating the pizza'
-            })
-            
-        }else{
-            //res.redirect('pizzas/${newPizzas.id}')
-            res.redirect('pizzas')
-        }
-    })
+    try{
+        const newPizza = await pizza.save()
+        //res.redirect(`pizzas/${newPizza.id}`)
+        res.redirect('pizzas')
+    }catch{
+        res.render('pizzas/new',{
+            pizzas:pizza,
+            errorMessage:'Error creating a pizza'
+        })
+    }
+    
+    
+    
     
 })
 

@@ -1,22 +1,20 @@
-
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser')
 const indexRouter = require('./router/index')
 const pizzaRouter = require('./router/pizzas')
-const mongoose = require('mongoose')
-require('dotenv').config();
+
 //connect to the database(Im using env to hide the credentials)- Mikhail showed in class
 
-const connectDB = async () => {
-  await mongoose.connect(process.env.DATABASE_URL, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify:false
-  });
-  console.log('db connected..!');
-};
+const mongoose = require('mongoose')
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,useUnifiedTopology: true })
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log('Connected to Mongoose'))
 
 
 app.set('view engine','ejs')//Im using the ejs for view engine
