@@ -7,6 +7,7 @@ router.get('/',async(req,res)=>{
     let searchOptions = {}
   if (req.query.name != null && req.query.name !== '') {
     searchOptions.name = new RegExp(req.query.name, 'i')
+    
   }
     try{
         const pizzas = await Pizzas.find(searchOptions)
@@ -29,7 +30,9 @@ router.get('/new',(req,res)=>{
 
 router.post('/', async(req,res)=>{
     const pizza = new Pizzas({
-        name: req.body.name
+        name: req.body.name,
+        price: req.body.price,
+        description:req.body.description
     })
     try{
         const newPizza = await pizza.save()

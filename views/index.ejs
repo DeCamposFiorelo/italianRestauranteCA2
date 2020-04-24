@@ -1,1 +1,13 @@
-Middle <!--it will be imported from the layout.ejs to the body in the layout ejs -->
+
+<h2>Menu</h2>
+<% pizza.forEach(pizza =>{ %>
+    <div><%= pizza.name %></div>
+<%})%>
+<br>
+<% pizza.forEach(pizza =>{ %>
+    <%= pizza.price %>
+<%})%>
+<br>
+<% pizza.forEach(pizza =>{ %>
+    <%= pizza.description %>
+<%})%>

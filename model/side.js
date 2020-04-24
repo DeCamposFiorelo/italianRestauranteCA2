@@ -1,16 +1,17 @@
 const mongoose = require('mongoose')
 
-const pizzaSchema = new mongoose.Schema({
+const sideSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
   },
   price:{
-      type: Number,
+      type:Number
   },
   description:{
       type:String
   }
+
 })
 
-module.exports = mongoose.model('pizzas', pizzaSchema)
+module.exports = mongoose.model('sides', sideSchema)
