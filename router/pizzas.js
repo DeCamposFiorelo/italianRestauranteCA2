@@ -21,11 +21,13 @@ router.get('/',async(req,res)=>{
     }
    
 });
-
 //new pizza router
 router.get('/new',(req,res)=>{
     res.render('pizzas/new',{ pizzas :new Pizzas()})
 })
+
+
+
 //creaate pizza router
 
 router.post('/', async(req,res)=>{
@@ -47,8 +49,17 @@ router.post('/', async(req,res)=>{
  
     
 })
-router.get('/:id',(req,res)=>{
-    res.send('Show Pizza'+req.params.id)
+
+router.get('/:id',async (req,res)=>{
+    try{
+        const pizza = await Pizzas.findById(req.params.id)
+        res.render('pizzas/show',{
+            pizzas:pizza,
+        })     
+    }catch{
+   
+        res.redirect('/')
+    }  
 })
 
 
@@ -66,6 +77,10 @@ router.put('/:id',async (req,res)=>{
    let pizza
     try{
         pizza = await Pizzas.findById(req.params.id)
+        pizza.name = req.body.name,
+        pizza.price=req.body.price
+        pizza.description=req.body.description
+
          await pizza.save()
         res.redirect(`/pizzas/${pizza.id}`)
        
@@ -82,8 +97,24 @@ router.put('/:id',async (req,res)=>{
         }
     
 })
-router.delete('/:id',(req,res)=>{
-    res.send('Delete Pizza'+req.params.id)
+router.delete('/:id',async (req,res)=>{
+  let pizza
+    try{
+        pizza = await Pizzas.findById(req.params.id)
+        
+
+         await pizza.remove()
+        res.redirect(`/pizzas`)
+       
+    }catch{
+        if( pizza ==null){
+            res.redirect('/')
+        }else{
+            res.redirect(`/pizzas/${pizza.id}`)
+        }
+    }
+        
+        
 })
 
 module.exports = router 
