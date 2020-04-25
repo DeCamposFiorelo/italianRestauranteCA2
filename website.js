@@ -7,6 +7,7 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+app.use(express.static('public'))
 const indexRouter = require('./router/index')
 const pizzaRouter = require('./router/pizzas')
 

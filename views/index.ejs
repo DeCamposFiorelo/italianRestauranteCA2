@@ -1,28 +1,27 @@
 
 <h2>Menu</h2>
-<div>
-    <table>
-        <th>
-            <td>
-                item
-            </td>
-            <td>
-                price
-            </td>
-            <td>
-                description
-            </td>
+<table id="menuTable" class="indent">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Italian Restaurant Menu</th>
+                        </tr>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-</table>
-</div>
 <% pizza.forEach(pizza =>{ %>
-  <table>
-    <th> 
+    <tr> 
         <td> <%= pizza.name %></td>
+        <td><%= pizza.description %></td>
         <td><%= pizza.price %> </td>
-        <td><%= pizza.description %></td><br>
-    </th>
-  </table>
+        
+        <br>
+    </tr>
+  
 
 <%})%>
 
