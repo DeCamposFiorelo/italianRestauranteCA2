@@ -1,7 +1,7 @@
 if(process.env.NODE_ENV !== 'production') {
   require('dotenv').config({ path: '.env' })
 }
-app.listen(process.env.PORT || 3000)
+
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
@@ -25,7 +25,7 @@ app.use(express.static('public'))//files,javascript,image
 app.use(bodyParser.urlencoded({limit:'10mb', extended:false}))
 app.use('/',indexRouter)// index page
 
-
+app.listen(process.env.PORT || 3000)
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex : true })
 const db = mongoose.connection
