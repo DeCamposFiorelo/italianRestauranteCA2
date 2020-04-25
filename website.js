@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const indexRouter = require('./router/index')
 const pizzaRouter = require('./router/pizzas')
-const sideRouter = require('./router/sides')
+
 
 //connect to the database(Im using env to hide the credentials)- Mikhail showed in class
 
@@ -28,7 +28,7 @@ app.use(express.static('public'))//files,javascript,image
 app.use(bodyParser.urlencoded({limit:'10mb', extended:false}))
 app.use('/',indexRouter)// index page
 app.use('/pizzas',pizzaRouter)
-app.use('/sides',sideRouter)
+
 
 
 const Port = process.env.Port || 3000;// port to use
