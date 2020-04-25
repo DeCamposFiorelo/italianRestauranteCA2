@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "website.js",
   "scripts": {
-    "start": "node website.js",
-    "devStart": "nodemon website.js"
+    "start":"node website.js"
+    
   },
   "repository": {
     "type": "git",
