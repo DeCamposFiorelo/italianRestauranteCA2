@@ -1,19 +1,22 @@
-
-<h2>Menu</h2>
-<table id="menuTable" class="indent">
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h1 class="mt-5 text-center" >Welcome to Italian Restaurant !</h1>
+                <img src="./italian.jpg" width="1100" height="250" >
+            <table id="menuTable" class="indent">
                     <thead>
                         <tr>
                             <th colspan="4">Italian Restaurant Menu</th>
                         </tr>
                         <tr>
                             <th>Item</th>
-                            <th>Price</th>
                             <th>Description</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
 
-<% pizza.forEach(pizza =>{ %>
+        <% pizza.forEach(pizza =>{ %>
     <tr> 
         <td> <%= pizza.name %></td>
         <td><%= pizza.description %></td>

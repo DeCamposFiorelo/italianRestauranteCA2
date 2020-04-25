@@ -1,6 +1,11 @@
-<h2>Edit pizza</h2>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h1 class="mt-5 text-center" >Edit Item !</h1>
+            </div>
+        </div>
 <form action="/pizzas/<%= pizzas.id %>?_method=PUT" method="POST">
   <%- include('_form_fields') %>
-  <a href="/pizzas/<%= pizzas.id %>">Cancel</a>
-  <button type="submit">Update</button>
+  <a class="btn btn-danger"href="/pizzas/<%= pizzas.id %>">Cancel</a>
+  <button class="btn btn-success" type="submit">Update</button>
 </form>

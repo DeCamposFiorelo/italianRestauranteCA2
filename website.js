@@ -12,6 +12,7 @@ const indexRouter = require('./router/index')
 const pizzaRouter = require('./router/pizzas')
 
 
+
 //connect to the database(Im using env to hide the credentials)- Mikhail showed in class
 
 
@@ -25,6 +26,7 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))//files,javascript,image
 app.use(bodyParser.urlencoded({limit:'10mb', extended:false}))
 app.use('/',indexRouter)// index page
+app.set('public', __dirname + '/public');
 
 app.listen(process.env.PORT || 3000)
 const mongoose = require('mongoose')
