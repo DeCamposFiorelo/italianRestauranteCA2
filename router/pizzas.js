@@ -2,12 +2,11 @@ const express = require('express')
 const router = express.Router()
 const Pizzas = require('../model/pizza')
 
-//get all the pizza
+//get all  pizza
 router.get('/',async(req,res)=>{
     let searchOptions = {}
   if (req.query.name != null && req.query.name !== '') {
-    searchOptions.name = new RegExp(req.query.name, 'i')
-    
+    searchOptions.name = new RegExp(req.query.name, 'i')  
   }
     try{
         const pizzas = await Pizzas.find(searchOptions)
@@ -15,21 +14,17 @@ router.get('/',async(req,res)=>{
          {pizza:pizzas, 
             searchOptions:req.query
         })
-
     }catch{
         res.redirect('/')
-    }
-   
+    }   
 });
+
 //new pizza router
 router.get('/new',(req,res)=>{
     res.render('pizzas/new',{ pizzas :new Pizzas()})
 })
 
-
-
 //creaate pizza router
-
 router.post('/', async(req,res)=>{
     const pizza = new Pizzas({
         name: req.body.name,
@@ -38,18 +33,15 @@ router.post('/', async(req,res)=>{
     })
     try{
         const newPizza = await pizza.save()
-        //res.redirect(`pizzas/${newPizza.id}`)
         res.redirect('pizzas')
     }catch{
         res.render('pizzas/new',{
             pizzas:pizza,
             errorMessage:'Error creating a pizza'
         })
-    }
- 
-    
+    }  
 })
-
+// show by ID router
 router.get('/:id',async (req,res)=>{
     try{
         const pizza = await Pizzas.findById(req.params.id)
@@ -62,7 +54,7 @@ router.get('/:id',async (req,res)=>{
     }  
 })
 
-
+// find the specefic ID to update after
 router.get('/:id/edit',async(req,res)=>{
     try{
         const pizzas = await Pizzas.findById(req.params.id)
@@ -72,7 +64,7 @@ router.get('/:id/edit',async(req,res)=>{
     }
    
 })
-
+//update router
 router.put('/:id',async (req,res)=>{
    let pizza
     try{
@@ -80,8 +72,7 @@ router.put('/:id',async (req,res)=>{
         pizza.name = req.body.name,
         pizza.price=req.body.price
         pizza.description=req.body.description
-
-         await pizza.save()
+        await pizza.save()//save in the db
         res.redirect(`/pizzas/${pizza.id}`)
        
     }catch{
@@ -92,17 +83,14 @@ router.put('/:id',async (req,res)=>{
             pizzas:pizza,
             errorMessage:'Error updating'
         })
-    }
-        
-        }
-    
+    }       
+        }   
 })
+//delete router
 router.delete('/:id',async (req,res)=>{
   let pizza
     try{
         pizza = await Pizzas.findById(req.params.id)
-        
-
          await pizza.remove()
         res.redirect(`/pizzas`)
        

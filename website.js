@@ -1,7 +1,6 @@
 if(process.env.NODE_ENV !== 'production') {
   require('dotenv').config({ path: '.env' })
 }
-
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
@@ -10,13 +9,6 @@ const methodOverride = require('method-override')
 app.use(express.static('public'))
 const indexRouter = require('./router/index')
 const pizzaRouter = require('./router/pizzas')
-
-
-
-//connect to the database(Im using env to hide the credentials)- Mikhail showed in class
-
-
-
 
 app.set('view engine','ejs')//Im using the ejs for view engine
 app.set('views',__dirname +'/views')//where my views is comming from
@@ -29,6 +21,8 @@ app.use('/',indexRouter)// index page
 app.set('public', __dirname + '/public');
 
 app.listen(process.env.PORT || 3000)
+
+//connect to the database(Im using env to hide the credentials)- Mikhail showed in class
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex : true })
 const db = mongoose.connection

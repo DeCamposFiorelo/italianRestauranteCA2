@@ -5,13 +5,12 @@
             </div>
         </div>
  <div id="myDIV">        
-<div class="mt-5 text-center"><p>Description: <%= pizzas.description %></p></div>
-<div class="mt-3 text-center"><p>Price: <%= pizzas.price %></p></div>
+    <div class="mt-5 text-center"><p>Description: <%= pizzas.description %></p></div>
+        <div class="mt-3 text-center"><p>Price: <%= pizzas.price %></p></div>
 
-</div>
-<div class="form-row btn-row">
-<a class="btn btn-secondary mr-1" href="/pizzas/<%= pizzas.id %>/edit">Edit</a>
-<%- include('../partials/delete_form',
-            { url: `/pizzas/${pizzas.id}` }) %>
-</div>
+    </div>
+    <div class="form-row btn-row">
+        <a class="btn btn-secondary mr-1" href="/pizzas/<%= pizzas.id %>/edit">Edit</a>
+            <%- include('../partials/delete_form',{ url: `/pizzas/${pizzas.id}` }) %>
+    </div>
 
